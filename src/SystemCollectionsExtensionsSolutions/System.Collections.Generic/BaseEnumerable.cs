@@ -15,6 +15,7 @@
         /// <summary>Initialize an enumerable container for type element</summary>
         public BaseEnumerable() : this(new T[0])
         {
+
         }
 
         /// <summary>encapsulates an existing enumerator</summary>

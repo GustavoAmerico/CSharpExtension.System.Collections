@@ -15,7 +15,7 @@ namespace System.Collections.Generic
         /// <summary>create an enumerable hashset for type element</summary>
         protected BaseCollection() : this(new HashSet<T>())
         {
-              
+               
         }
 
         /// <summary>create an enumerable for type element</summary>

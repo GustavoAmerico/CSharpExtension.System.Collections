@@ -25,7 +25,7 @@ namespace System.Collections.Generic
              Func<T, TResult> selector,
             Func<IEnumerable<TResult>, TCollection> constructor)
         {
-                if (constructor == null) throw new ArgumentNullException(nameof(constructor));
+            if (constructor == null) throw new ArgumentNullException(nameof(constructor));
 
             if (enumerable.IsEmpty())
                 return constructor(new TResult[0]);
@@ -52,6 +52,21 @@ namespace System.Collections.Generic
                 .Where(expression)
                 .Select(selector);
         }
- 
+
+
+        /// <summary>Aggregates the specified property selector.</summary>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="propertySelector">The property selector.</param>
+        /// <param name="separator">The separator.</param>
+        /// <returns></returns>
+        public static string Aggregate<T>(this IEnumerable<T> enumerable, Func<T, string> propertySelector, string separator = ",")
+        {
+            if (enumerable?.Any() != true)
+            {
+                return string.Empty;
+            }
+            return enumerable.Select(propertySelector)
+                             .Aggregate((c, r) => $"{c}{separator}{r}");
+        }
     }
 }

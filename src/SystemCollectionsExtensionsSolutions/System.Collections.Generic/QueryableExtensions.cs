@@ -64,13 +64,12 @@ namespace System.Linq
         /// <exception cref="ArgumentNullException"></exception>
         public static TCollection To<T, TCollection>(
             this IQueryable<T> collection,
-            Expression<Func<T, bool>> condition,
-            Func<IQueryable<T>, TCollection> func) where TCollection : EnumerableQuery<T>
+            Expression<Func<T, bool>> condition) where TCollection : EnumerableQuery<T>
         {
+
             if (condition == null) throw new ArgumentNullException(nameof(condition));
-            if (func == null) throw new ArgumentNullException(nameof(func));
             var x = collection.Where(condition);
-            var y = func(x);
+            var y = (TCollection)new EnumerableQuery<T>(x);
             return y;
         }
 

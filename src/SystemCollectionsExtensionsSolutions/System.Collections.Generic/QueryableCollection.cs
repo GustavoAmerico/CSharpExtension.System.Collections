@@ -27,11 +27,13 @@ namespace System.Linq
         public QueryableCollection()
         {
             _queryable = new EnumerableQuery<T>(Itens);
+             
         }
 
         /// <summary>Initialize an container for exist Queryable provider</summary>
         public QueryableCollection(IQueryableCollection<T> queryable) : base(queryable)
         {
+             
             _queryable = queryable;
         }
 

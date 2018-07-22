@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4;netstandard2.0</TargetFrameworks>
+    <AssemblyName>GAmerico.System.Collections.Generic</AssemblyName>
+    <Authors>Gustavo Américo</Authors>
+    <Company>GAG</Company>
+    <Product>System.Collections.Extensions</Product>
+    <Description>This repository extends default features from net framework</Description>
+    <PackageLicenseUrl>https://github.com/GustavoAmerico/CSharpExtension.System.Collections/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/GustavoAmerico/CSharpExtension.System.Collections</PackageProjectUrl>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/GustavoAmerico/CSharpExtension.System.Collections</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.4|AnyCPU'">
+    <DocumentationFile>bin\Debug\GAmerico.System.Collections.Generic.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>
