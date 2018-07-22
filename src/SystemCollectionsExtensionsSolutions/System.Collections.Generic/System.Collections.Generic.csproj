@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.4;netstandard2.0</TargetFrameworks>
-    <AssemblyName>GAmerico.System.Collections.Generic</AssemblyName>
+    <AssemblyName>CSharpExtension.System.Collections</AssemblyName>
     <Authors>Gustavo Américo</Authors>
     <Company>GAG</Company>
     <Product>System.Collections.Extensions</Product>
@@ -14,10 +14,7 @@
     <RepositoryType>GIT</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.4|AnyCPU'">
-    <DocumentationFile>bin\Debug\GAmerico.System.Collections.Generic.xml</DocumentationFile>
+    <DocumentationFile>bin\GAmerico.System.Collections.Generic.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
